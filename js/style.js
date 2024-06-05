@@ -3,22 +3,23 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
-            randomMail : "" ,
             randomArrayMail: [],
-        }
+    }
     },
     methods:{
         getData(){
+            for (let i = 0; i < 10; i++) {
             axios.get("https://flynn.boolean.careers/exercises/api/random/mail")
-            .then((mail) => {
-                for (let i = 0 ; i < 10 ; i++){
-                    this.randomMail = mail.data.response;
-                    this.randomArrayMail.push(this.randomMail);
-                }})
+            .then((response) => {
+                    this.randomArrayMail.push(response.data.response);
+                })
+            }
         }
     },
 
     created(){
+        
         this.getData();
+    
     },
 }).mount('#app')
