@@ -12,9 +12,9 @@
     
     <div id="app">
         <div class="list-container">
-            <ul>
-                <li>
-                    {{randomMail}}
+            <ul >
+                <li v-for="item in randomArrayMail">
+                    {{item}}
                 </li>
             </ul>
         </div>
