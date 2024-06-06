@@ -14,7 +14,7 @@
     
     <div id="app">
         <div class="list-container">
-            <ul>
+            <ul v-if="randomArrayMail.length >= 10">
                 <li v-for="item in randomArrayMail">
                     {{item}}
                 </li>
